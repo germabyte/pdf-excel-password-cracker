@@ -1,35 +1,40 @@
 # PDF Password Cracker
 
 ## Description
-This Python script provides a simple yet effective way to perform a brute force attack on password-protected PDF files. It attempts to unlock a PDF by trying passwords ranging from 0000 to 9999.
+
+This Python script is designed to perform a brute-force attack to unlock password-protected PDF files. It uses a combination of numeric and dictionary-based approaches to try and crack the password. The script is built using the PyPDF2 library for handling PDF files and tkinter for a basic graphical user interface to select files and input parameters.
 
 ## Features
-- **File Selection GUI**: Easily select your target PDF file through a graphical file picker.
-- **Brute Force Attack**: Automatically tries all possible four-digit combinations as passwords.
-- **Progress Display**: Shows the progress of the password cracking process.
-- **Efficient and User-friendly**: The script is straightforward to use, with minimal setup required.
+
+- **Numeric Brute Force**: Attempts to unlock the PDF by trying numeric passwords up to a specified number of digits.
+- **Dictionary Attack**: Uses a list of passwords from provided text files to attempt to unlock the PDF.
+- **Graphical File Selection**: Easily select your target PDF file and text files containing potential passwords through a file dialog interface.
+- **Progress Display**: Shows the progress of the brute-forcing process using tqdm.
 
 ## Requirements
+
 - Python 3.x
 - PyPDF2
 - tqdm
-- tkinter
+- tkinter (usually included in standard Python installations)
 
 ## Installation
-1. Ensure Python 3.x is installed on your system.
-2. Install the required packages using pip:
-   ```bash
+
+1. Clone the repository or download the script.
+2. Install the required libraries using pip:
+   ```
    pip install PyPDF2 tqdm
    ```
 
 ## Usage
-1. Run the script:
-   ```bash
-   python pdf_password_cracker.py
-   ```
-2. A file dialog will open. Select the PDF file you wish to crack.
-3. The script will start attempting to crack the password, showing the progress in the console.
-4. Once the password is found, it will be displayed in the console.
 
-## Important Note
-This tool is intended for educational purposes or for recovering passwords of your own files. Using this tool on files you do not have permission to access is illegal and unethical.
+1. Run the script in a Python environment.
+2. A file dialog will appear. Select the PDF file you wish to unlock.
+3. Input the maximum number of digits for the numeric brute force attempt.
+4. Select text files containing possible passwords for the dictionary attack (optional).
+5. The script will first attempt numeric brute forcing, followed by the dictionary attack if text files were provided.
+6. If the password is found, it will be displayed in the console.
+
+## Warning
+
+This tool is intended for educational purposes and for recovering passwords of PDFs you are legally entitled to access. Using this tool for cracking passwords of files you do not own or have permission to access may be illegal in your jurisdiction.
