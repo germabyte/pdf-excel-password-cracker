@@ -1,40 +1,41 @@
-# PDF Password Cracker
+# PDF and Excel Password Cracker
 
 ## Description
 
-This Python script is designed to perform a brute-force attack to unlock password-protected PDF files. It uses a combination of numeric and dictionary-based approaches to try and crack the password. The script is built using the PyPDF2 library for handling PDF files and tkinter for a basic graphical user interface to select files and input parameters.
+This Python script is capable of cracking password-protected PDF and Excel files using brute-force and dictionary attack methods. The script utilizes various libraries including `msoffcrypto`, `PyPDF2`, `openpyxl`, and `tkinter` for a graphical user interface. It offers flexibility in handling both numeric and dictionary-based attacks, making it versatile for different cracking scenarios.
 
 ## Features
 
-- **Numeric Brute Force**: Attempts to unlock the PDF by trying numeric passwords up to a specified number of digits.
-- **Dictionary Attack**: Uses a list of passwords from provided text files to attempt to unlock the PDF.
-- **Graphical File Selection**: Easily select your target PDF file and text files containing potential passwords through a file dialog interface.
-- **Progress Display**: Shows the progress of the brute-forcing process using tqdm.
+- **Support for Multiple File Types**: Works with both PDF and Excel files.
+- **Numeric Brute Force**: Attempts passwords using numeric combinations up to a specified number of digits.
+- **Dictionary Attack**: Utilizes provided text files containing potential passwords.
+- **File Dialog Interface**: Enables easy file selection for both the target file and the dictionary files.
+- **Progress Tracking**: Progress of the brute-forcing attempt is displayed using tqdm.
+- **Flexible Password Testing**: Handles different methods for testing passwords on PDF and Excel files.
 
 ## Requirements
 
 - Python 3.x
-- PyPDF2
-- tqdm
-- tkinter (usually included in standard Python installations)
+- Libraries: `msoffcrypto`, `PyPDF2`, `openpyxl`, `tqdm`, `tkinter`
+- Tkinter is generally included in standard Python installations.
 
 ## Installation
 
 1. Clone the repository or download the script.
-2. Install the required libraries using pip:
+2. Install the necessary libraries:
    ```
-   pip install PyPDF2 tqdm
+   pip install msoffcrypto PyPDF2 openpyxl tqdm
    ```
 
 ## Usage
 
-1. Run the script in a Python environment.
-2. A file dialog will appear. Select the PDF file you wish to unlock.
-3. Input the maximum number of digits for the numeric brute force attempt.
-4. Select text files containing possible passwords for the dictionary attack (optional).
-5. The script will first attempt numeric brute forcing, followed by the dictionary attack if text files were provided.
-6. If the password is found, it will be displayed in the console.
+1. Execute the script in a Python environment.
+2. Select the PDF or Excel file you want to crack through the file dialog.
+3. Enter the maximum number of digits for the numeric brute force attack.
+4. Optionally, choose text files that contain possible passwords for the dictionary attack.
+5. The script will first try numeric brute-forcing and then proceed to the dictionary attack if dictionary files are provided.
+6. The script will notify you of the successful password discovery and save the decrypted file.
 
-## Warning
+## Caution
 
-This tool is intended for educational purposes and for recovering passwords of PDFs you are legally entitled to access. Using this tool for cracking passwords of files you do not own or have permission to access may be illegal in your jurisdiction.
+This tool is intended strictly for educational purposes and legitimate use cases like recovering lost passwords for files you legally own. Utilizing this tool for unauthorized access to files can be illegal in many jurisdictions and is strongly discouraged.
